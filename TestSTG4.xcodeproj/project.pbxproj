@@ -47,6 +47,7 @@
 		E337C45425FE474000E91C3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E337C45525FE474000E91C3F /* TestSTG4_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TestSTG4_macOS.entitlements; sourceTree = "<group>"; };
 		E3662F03260392B6003442EB /* test2.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = test2.js; sourceTree = "<group>"; };
+		E3662F0726039814003442EB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		E39F210F260245640090BFBA /* MacApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacApp.swift; sourceTree = "<group>"; };
 		E39F2113260245920090BFBA /* MacView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacView.swift; sourceTree = "<group>"; };
 		E39F2117260246140090BFBA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
@@ -81,6 +82,7 @@
 		E337C42B25FE473F00E91C3F = {
 			isa = PBXGroup;
 			children = (
+				E3662F0726039814003442EB /* README.md */,
 				E337C43025FE473F00E91C3F /* TestSTG4 Shared */,
 				E337C43B25FE474000E91C3F /* TestSTG4 iOS */,
 				E337C44C25FE474000E91C3F /* TestSTG4 macOS */,
