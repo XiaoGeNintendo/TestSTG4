@@ -11,23 +11,31 @@
 		E337C43F25FE474000E91C3F /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E337C43E25FE474000E91C3F /* GameViewController.swift */; };
 		E337C44225FE474000E91C3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E337C44025FE474000E91C3F /* Main.storyboard */; };
 		E337C44525FE474000E91C3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E337C44325FE474000E91C3F /* LaunchScreen.storyboard */; };
-		E337C44E25FE474000E91C3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E337C44D25FE474000E91C3F /* AppDelegate.swift */; };
-		E337C45025FE474000E91C3F /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E337C44F25FE474000E91C3F /* GameViewController.swift */; };
-		E337C45325FE474000E91C3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E337C45125FE474000E91C3F /* Main.storyboard */; };
-		E337C45625FE474000E91C3F /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = E337C43125FE473F00E91C3F /* Actions.sks */; };
-		E337C45725FE474000E91C3F /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = E337C43125FE473F00E91C3F /* Actions.sks */; };
-		E337C45825FE474000E91C3F /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E337C43225FE473F00E91C3F /* GameScene.sks */; };
-		E337C45925FE474000E91C3F /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = E337C43225FE473F00E91C3F /* GameScene.sks */; };
-		E337C45A25FE474000E91C3F /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E337C43325FE473F00E91C3F /* GameScene.swift */; };
-		E337C45B25FE474000E91C3F /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E337C43325FE473F00E91C3F /* GameScene.swift */; };
 		E337C45C25FE474000E91C3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E337C43425FE474000E91C3F /* Assets.xcassets */; };
 		E337C45D25FE474000E91C3F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E337C43425FE474000E91C3F /* Assets.xcassets */; };
+		E3662EF126039163003442EB /* CommonScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CA66F026038E97005CA40F /* CommonScript.swift */; };
+		E3662EF426039167003442EB /* Registering.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CA66F626038F07005CA40F /* Registering.swift */; };
+		E3662EF72603916C003442EB /* TSSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39F212B260248010090BFBA /* TSSystem.swift */; };
+		E3662EF82603916C003442EB /* TSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39F213126024B620090BFBA /* TSObject.swift */; };
+		E3662EF92603916C003442EB /* TSBullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39F213526024C990090BFBA /* TSBullet.swift */; };
+		E3662EFA2603916C003442EB /* TSBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39F21252602476B0090BFBA /* TSBackground.swift */; };
+		E3662EFD2603916E003442EB /* STGScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39F211E260246B80090BFBA /* STGScene.swift */; };
+		E3662F0026039171003442EB /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39F2117260246140090BFBA /* Constants.swift */; };
+		E3662F04260392B6003442EB /* test2.js in Resources */ = {isa = PBXBuildFile; fileRef = E3662F03260392B6003442EB /* test2.js */; };
+		E39F2110260245640090BFBA /* MacApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39F210F260245640090BFBA /* MacApp.swift */; };
+		E39F2114260245920090BFBA /* MacView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39F2113260245920090BFBA /* MacView.swift */; };
+		E39F2118260246140090BFBA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39F2117260246140090BFBA /* Constants.swift */; };
+		E39F211F260246B80090BFBA /* STGScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39F211E260246B80090BFBA /* STGScene.swift */; };
+		E39F21262602476B0090BFBA /* TSBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39F21252602476B0090BFBA /* TSBackground.swift */; };
+		E39F212C260248010090BFBA /* TSSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39F212B260248010090BFBA /* TSSystem.swift */; };
+		E39F213226024B620090BFBA /* TSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39F213126024B620090BFBA /* TSObject.swift */; };
+		E39F213626024C990090BFBA /* TSBullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = E39F213526024C990090BFBA /* TSBullet.swift */; };
+		E3CA66EC26038A4E005CA40F /* testScript.js in Resources */ = {isa = PBXBuildFile; fileRef = E3CA66E826038A24005CA40F /* testScript.js */; };
+		E3CA66F126038E97005CA40F /* CommonScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CA66F026038E97005CA40F /* CommonScript.swift */; };
+		E3CA66F726038F07005CA40F /* Registering.swift in Sources */ = {isa = PBXBuildFile; fileRef = E3CA66F626038F07005CA40F /* Registering.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E337C43125FE473F00E91C3F /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
-		E337C43225FE473F00E91C3F /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		E337C43325FE473F00E91C3F /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
 		E337C43425FE474000E91C3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E337C43925FE474000E91C3F /* TestSTG4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestSTG4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E337C43C25FE474000E91C3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -36,11 +44,20 @@
 		E337C44425FE474000E91C3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E337C44625FE474000E91C3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E337C44B25FE474000E91C3F /* TestSTG4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestSTG4.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		E337C44D25FE474000E91C3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E337C44F25FE474000E91C3F /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		E337C45225FE474000E91C3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E337C45425FE474000E91C3F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E337C45525FE474000E91C3F /* TestSTG4_macOS.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = TestSTG4_macOS.entitlements; sourceTree = "<group>"; };
+		E3662F03260392B6003442EB /* test2.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = test2.js; sourceTree = "<group>"; };
+		E39F210F260245640090BFBA /* MacApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacApp.swift; sourceTree = "<group>"; };
+		E39F2113260245920090BFBA /* MacView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MacView.swift; sourceTree = "<group>"; };
+		E39F2117260246140090BFBA /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E39F211E260246B80090BFBA /* STGScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = STGScene.swift; sourceTree = "<group>"; };
+		E39F21252602476B0090BFBA /* TSBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSBackground.swift; sourceTree = "<group>"; };
+		E39F212B260248010090BFBA /* TSSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSSystem.swift; sourceTree = "<group>"; };
+		E39F213126024B620090BFBA /* TSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSObject.swift; sourceTree = "<group>"; };
+		E39F213526024C990090BFBA /* TSBullet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSBullet.swift; sourceTree = "<group>"; };
+		E3CA66E826038A24005CA40F /* testScript.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = testScript.js; sourceTree = "<group>"; };
+		E3CA66F026038E97005CA40F /* CommonScript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonScript.swift; sourceTree = "<group>"; };
+		E3CA66F626038F07005CA40F /* Registering.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Registering.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,10 +91,11 @@
 		E337C43025FE473F00E91C3F /* TestSTG4 Shared */ = {
 			isa = PBXGroup;
 			children = (
-				E337C43125FE473F00E91C3F /* Actions.sks */,
-				E337C43225FE473F00E91C3F /* GameScene.sks */,
-				E337C43325FE473F00E91C3F /* GameScene.swift */,
+				E3CA66FC26039069005CA40F /* Script */,
+				E39F2124260247620090BFBA /* Engine */,
+				E39F211D260246A20090BFBA /* Scene */,
 				E337C43425FE474000E91C3F /* Assets.xcassets */,
+				E39F2117260246140090BFBA /* Constants.swift */,
 			);
 			path = "TestSTG4 Shared";
 			sourceTree = "<group>";
@@ -106,13 +124,42 @@
 		E337C44C25FE474000E91C3F /* TestSTG4 macOS */ = {
 			isa = PBXGroup;
 			children = (
-				E337C44D25FE474000E91C3F /* AppDelegate.swift */,
-				E337C44F25FE474000E91C3F /* GameViewController.swift */,
-				E337C45125FE474000E91C3F /* Main.storyboard */,
 				E337C45425FE474000E91C3F /* Info.plist */,
 				E337C45525FE474000E91C3F /* TestSTG4_macOS.entitlements */,
+				E39F210F260245640090BFBA /* MacApp.swift */,
+				E39F2113260245920090BFBA /* MacView.swift */,
+				E3CA66E826038A24005CA40F /* testScript.js */,
+				E3662F03260392B6003442EB /* test2.js */,
 			);
 			path = "TestSTG4 macOS";
+			sourceTree = "<group>";
+		};
+		E39F211D260246A20090BFBA /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				E39F211E260246B80090BFBA /* STGScene.swift */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		E39F2124260247620090BFBA /* Engine */ = {
+			isa = PBXGroup;
+			children = (
+				E39F21252602476B0090BFBA /* TSBackground.swift */,
+				E39F212B260248010090BFBA /* TSSystem.swift */,
+				E39F213126024B620090BFBA /* TSObject.swift */,
+				E39F213526024C990090BFBA /* TSBullet.swift */,
+			);
+			path = Engine;
+			sourceTree = "<group>";
+		};
+		E3CA66FC26039069005CA40F /* Script */ = {
+			isa = PBXGroup;
+			children = (
+				E3CA66F026038E97005CA40F /* CommonScript.swift */,
+				E3CA66F626038F07005CA40F /* Registering.swift */,
+			);
+			path = Script;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -193,9 +240,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E337C45825FE474000E91C3F /* GameScene.sks in Resources */,
 				E337C44225FE474000E91C3F /* Main.storyboard in Resources */,
-				E337C45625FE474000E91C3F /* Actions.sks in Resources */,
 				E337C44525FE474000E91C3F /* LaunchScreen.storyboard in Resources */,
 				E337C45C25FE474000E91C3F /* Assets.xcassets in Resources */,
 			);
@@ -205,10 +250,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E337C45325FE474000E91C3F /* Main.storyboard in Resources */,
-				E337C45925FE474000E91C3F /* GameScene.sks in Resources */,
 				E337C45D25FE474000E91C3F /* Assets.xcassets in Resources */,
-				E337C45725FE474000E91C3F /* Actions.sks in Resources */,
+				E3CA66EC26038A4E005CA40F /* testScript.js in Resources */,
+				E3662F04260392B6003442EB /* test2.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -219,9 +263,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E337C45A25FE474000E91C3F /* GameScene.swift in Sources */,
 				E337C43F25FE474000E91C3F /* GameViewController.swift in Sources */,
+				E3662EFD2603916E003442EB /* STGScene.swift in Sources */,
+				E3CA66F726038F07005CA40F /* Registering.swift in Sources */,
+				E3662EF72603916C003442EB /* TSSystem.swift in Sources */,
 				E337C43D25FE474000E91C3F /* AppDelegate.swift in Sources */,
+				E3662F0026039171003442EB /* Constants.swift in Sources */,
+				E3662EFA2603916C003442EB /* TSBackground.swift in Sources */,
+				E3CA66F126038E97005CA40F /* CommonScript.swift in Sources */,
+				E3662EF92603916C003442EB /* TSBullet.swift in Sources */,
+				E3662EF82603916C003442EB /* TSObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -229,9 +280,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E337C45B25FE474000E91C3F /* GameScene.swift in Sources */,
-				E337C45025FE474000E91C3F /* GameViewController.swift in Sources */,
-				E337C44E25FE474000E91C3F /* AppDelegate.swift in Sources */,
+				E39F213626024C990090BFBA /* TSBullet.swift in Sources */,
+				E3662EF426039167003442EB /* Registering.swift in Sources */,
+				E39F2110260245640090BFBA /* MacApp.swift in Sources */,
+				E39F213226024B620090BFBA /* TSObject.swift in Sources */,
+				E39F211F260246B80090BFBA /* STGScene.swift in Sources */,
+				E39F21262602476B0090BFBA /* TSBackground.swift in Sources */,
+				E3662EF126039163003442EB /* CommonScript.swift in Sources */,
+				E39F212C260248010090BFBA /* TSSystem.swift in Sources */,
+				E39F2114260245920090BFBA /* MacView.swift in Sources */,
+				E39F2118260246140090BFBA /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -252,14 +310,6 @@
 				E337C44425FE474000E91C3F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-		E337C45125FE474000E91C3F /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				E337C45225FE474000E91C3F /* Base */,
-			);
-			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */

@@ -1,0 +1,4 @@
+
+function deal(){
+    print("A")
+}
