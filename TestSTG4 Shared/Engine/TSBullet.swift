@@ -13,12 +13,21 @@ class TSBullet: TSObject{
     
     var display: SKSpriteNode
     
+    
+    var id: Int = -1
     init(type: Int){
         self.type=type
         self.display=SKSpriteNode()
         super.init()
         
-        display.texture=SKTexture(imageNamed: "bullet.png")
+//        display.texture=SKTexture(imageNamed: "shotsheet")
+        display.texture=textureCache[type]
+        display.position=CGPoint(x: 0,y: 0)
+        display.size=CGSize(width: sheet[type][SS_SX],height: sheet[type][SS_SY])
+        display.alpha=0
+        display.setScale(5)
+        display.run(SKAction.scale(to: 1, duration: 0.1))
+        display.run(SKAction.fadeIn(withDuration: 0.1))
         addChild(display)
     }
     

@@ -44,16 +44,42 @@ class STGScene: SKScene{
     }
     
     /**
+     Add a bullet to the bullet pool
+     */
+    func addBullet(bullet: TSBullet){
+        if disposed.isEmpty{
+            print("Too many bullets!! Will not add a new one")
+            return
+        }
+        
+        bullet.id=disposed.first!
+        bullets[disposed.first!]=bullet
+        layer[LAYER_BUL].addChild(bullet)
+        disposed.removeFirst()
+    }
+    
+    /**
      Must be called to set parameters
      */
     func initSTGScene(painter: TSBackground, script: [String], system: TSSystem){
+        //Set Current Active Scene
+        boss=self
+        
+        //Load background
         bgp=painter
         bgp.onInit(scene: self)
+        
+        //Load shotsheet
+        cacheTexture()
         
         //Init script
         print("Initalizing Script")
         scriptPath=script.last!
         regAll(to: jsc)
+        
+        for i in script{
+            loadScript(script: i)
+        }
         
         jsc?.exceptionHandler={ context, exception in
             fatalError("Javascript error: "+(exception?.toString())!)
@@ -76,9 +102,12 @@ class STGScene: SKScene{
     }
 
     override func didMove(to view: SKView) {
+        print("Presenting Layers")
         for i in 0..<LAYERCNT{
             addChild(layer[i])
         }
+        
+//        addChild(SKLabelNode(text: "asd"))
     }
     
     func updateLayer(_ layer: SKNode){
@@ -104,5 +133,8 @@ class STGScene: SKScene{
         //update system
         system.onUpdate()
         
+        for i in layer[LAYER_BUL].children{
+//            print(i)
+        }
     }
 }

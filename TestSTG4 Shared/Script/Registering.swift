@@ -17,4 +17,5 @@ func reg<T>(f: T, name: String, to: JSContext?){
 func regAll(to: JSContext?){
     reg(f: pt, name: "print", to: to)
     reg(f: err, name: "fatal", to: to)
+    reg(f: CreateShot, name: "createShot", to: to)
 }

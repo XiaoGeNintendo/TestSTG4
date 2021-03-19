@@ -15,4 +15,11 @@ let LAYERCNT = 6
 
 let LAYERNAME = ["Background","Object","Player","Enemy","Bullet","UI"]
 
-var scene:STGScene? = nil
+let LAYER_BG=0
+let LAYER_OBJ=0
+let LAYER_PL=0
+let LAYER_ENE=0
+let LAYER_BUL=0
+let LAYER_UI=0
+
+var boss:STGScene? = nil
