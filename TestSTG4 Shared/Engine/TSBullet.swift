@@ -13,8 +13,10 @@ class TSBullet: TSObject{
     
     var display: SKSpriteNode
     
+    var autoFree=true
     
     var id: Int = -1
+    
     init(type: Int){
         self.type=type
         self.display=SKSpriteNode()
@@ -29,6 +31,25 @@ class TSBullet: TSObject{
         display.run(SKAction.scale(to: 1, duration: 0.1))
         display.run(SKAction.fadeIn(withDuration: 0.1))
         addChild(display)
+    }
+    
+    func isOOB() -> Bool{
+        let VALUE:Double=100
+        return x >= Double(WIDTH) + VALUE || x <= -VALUE || y >= Double(HEIGHT) + VALUE || y <= -VALUE
+    }
+    /**
+     Delete a bullet ELEGANTLY
+     */
+    func delete(){
+        boss?.removeBullet(id: id)
+        
+        run(SKAction.sequence([
+            SKAction.group([
+                SKAction.scale(to: 5, duration: 0.1),
+                SKAction.fadeOut(withDuration: 0.1)
+            ]),
+            SKAction.removeFromParent()
+        ]))
     }
     
     required init?(coder aDecoder: NSCoder) {

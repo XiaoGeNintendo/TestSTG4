@@ -22,6 +22,7 @@ class STGScene: SKScene{
     var disposed:[Int]=[]
     
     var jsc=JSContext()
+    var stack:[String]=[]
     
     func setName(name: String){
         print("Hello World")
@@ -31,7 +32,12 @@ class STGScene: SKScene{
         print("Loading script:\(script)")
         if let jsfile=Bundle.main.url(forResource: script, withExtension: "js"){
             do{
-                let content=try String(contentsOf: jsfile)
+                var content=try String(contentsOf: jsfile)
+                
+                //replace essential macro
+                let uuid=UUID().uuidString
+                content=replaceMacro(content,uuid)
+                pushScriptStack(id: uuid)
                 
                 jsc?.evaluateScript(content, withSourceURL: jsfile)
                 
@@ -58,6 +64,19 @@ class STGScene: SKScene{
         disposed.removeFirst()
     }
     
+    func getBullet(id: Int) -> TSBullet{
+        return bullets[id]!
+    }
+    
+    func removeBullet(id: Int){
+        disposed.append(id)
+    }
+    
+    func pushScriptStack(id: String){
+        stack.append(id.replacingOccurrences(of: "-", with: "_"))
+        print("Pushed script stack:\(id)")
+    }
+    
     /**
      Must be called to set parameters
      */
@@ -76,7 +95,7 @@ class STGScene: SKScene{
         print("Initalizing Script")
         scriptPath=script.last!
         regAll(to: jsc)
-        
+        loadScript(script: "global")
         for i in script{
             loadScript(script: i)
         }
@@ -85,7 +104,7 @@ class STGScene: SKScene{
             fatalError("Javascript error: "+(exception?.toString())!)
         }
         
-        let fun=jsc?.objectForKeyedSubscript("onInit")
+        let fun=jsc?.objectForKeyedSubscript("onInit_\(stack.last!)")
         let ret=fun?.call(withArguments: [self])
         
         print("Return as: \(ret!)")
@@ -127,14 +146,25 @@ class STGScene: SKScene{
         }
         
         //run script
-        let fun=jsc?.objectForKeyedSubscript("update")
+        let fun=jsc?.objectForKeyedSubscript("poolUpdate")
         fun?.call(withArguments: nil)
+        
+        let fun2=jsc?.objectForKeyedSubscript("update_\(stack.last!)")
+        fun2?.call(withArguments: nil)
+        
+        //garbage collect
+        for i in layer[LAYER_BUL].children{
+            let bullet=i as! TSBullet
+            if bullet.isOOB() && bullet.autoFree{
+                bullet.delete()
+            }
+        }
         
         //update system
         system.onUpdate()
         
-        for i in layer[LAYER_BUL].children{
-//            print(i)
-        }
+//        if layer[LAYER_BUL].children.count>=1000{
+//            print(layer[LAYER_BUL].children.count)
+//        }
     }
 }

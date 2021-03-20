@@ -11,12 +11,15 @@ class TSBullet2: TSBullet{
     
     var v:Double=0
     var a:Double=0
+    var acc:Double=0
     var omega:Double=0
+    
     override init(type: Int){
         super.init(type: type)
     }
     
     override func update() {
+        v-=acc
         vx=v*cos(a/180*3.14)
         vy=v*sin(a/180*3.14)
         a+=omega
