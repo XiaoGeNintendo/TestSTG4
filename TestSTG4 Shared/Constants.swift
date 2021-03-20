@@ -16,10 +16,10 @@ let LAYERCNT = 6
 let LAYERNAME = ["Background","Object","Player","Enemy","Bullet","UI"]
 
 let LAYER_BG=0
-let LAYER_OBJ=0
-let LAYER_PL=0
-let LAYER_ENE=0
-let LAYER_BUL=0
-let LAYER_UI=0
+let LAYER_OBJ=1
+let LAYER_PL=2
+let LAYER_ENE=3
+let LAYER_BUL=4
+let LAYER_UI=5
 
 var boss:STGScene? = nil

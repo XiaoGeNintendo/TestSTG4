@@ -14,13 +14,19 @@ class TSBullet: TSObject{
     var display: SKSpriteNode
     
     var autoFree=true
+    var alive=true
     
+    var grazeCount=1
+    
+    var hitbox:Double = 0
     var id: Int = -1
     
     init(type: Int){
         self.type=type
         self.display=SKSpriteNode()
         super.init()
+        
+        hitbox=Double(min(sheet[type][SS_SX], sheet[type][SS_SY]))/3.0
         
 //        display.texture=SKTexture(imageNamed: "shotsheet")
         display.texture=textureCache[type]
@@ -42,7 +48,7 @@ class TSBullet: TSObject{
      */
     func delete(){
         boss?.removeBullet(id: id)
-        
+        alive=false
         run(SKAction.sequence([
             SKAction.group([
                 SKAction.scale(to: 5, duration: 0.1),

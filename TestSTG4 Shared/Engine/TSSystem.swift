@@ -25,4 +25,24 @@ class TSSystem{
     func onUpdate(){
         
     }
+    
+    func onHit(bullet: TSBullet){
+        
+    }
+    
+    func onDeathbombWindowEnd(){
+        
+    }
+    
+    func onGraze(bullet: TSBullet){
+        
+    }
+    
+    func onShoot(){
+        
+    }
+    
+    func onBomb(){
+        
+    }
 }

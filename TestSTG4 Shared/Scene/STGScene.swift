@@ -24,6 +24,8 @@ class STGScene: SKScene{
     var jsc=JSContext()
     var stack:[String]=[]
     
+    var player = TSPlayer()
+    
     func setName(name: String){
         print("Hello World")
     }
@@ -80,7 +82,7 @@ class STGScene: SKScene{
     /**
      Must be called to set parameters
      */
-    func initSTGScene(painter: TSBackground, script: [String], system: TSSystem){
+    func initSTGScene(painter: TSBackground, script: [String], system: TSSystem, player: TSPlayer){
         //Set Current Active Scene
         boss=self
         
@@ -114,10 +116,17 @@ class STGScene: SKScene{
         self.system=system
         self.system.onInit(scene: self)
         
+        //Init bullet
         bullets=Array(repeating: nil, count: BULLETMAX)
         for i in 0..<BULLETMAX{
             disposed.append(i)
         }
+        
+        //Init player
+        self.player=player
+        self.player.x=Double(WIDTH)/2
+        self.player.y=Double(HEIGHT)/4
+        layer[LAYER_PL].addChild(self.player)
     }
 
     override func didMove(to view: SKView) {
@@ -136,7 +145,8 @@ class STGScene: SKScene{
         }
     }
     
-    override func update(_ currentTime: TimeInterval) {
+    func update(){
+        
         //update ui components
         bgp.onUpdate()
         
@@ -144,6 +154,11 @@ class STGScene: SKScene{
         for i in 0..<LAYERCNT{
             updateLayer(layer[i])
         }
+        
+        //update keys
+        #if os(macOS)
+        updateKey()
+        #endif
         
         //run script
         let fun=jsc?.objectForKeyedSubscript("poolUpdate")
@@ -155,16 +170,134 @@ class STGScene: SKScene{
         //garbage collect
         for i in layer[LAYER_BUL].children{
             let bullet=i as! TSBullet
-            if bullet.isOOB() && bullet.autoFree{
+            if bullet.isOOB() && bullet.autoFree && bullet.alive{
                 bullet.delete()
+            }
+        }
+        
+        //collision detect
+        for i in layer[LAYER_BUL].children{
+            let bullet=i as! TSBullet
+            if bullet.alive && player.collide(bullet: bullet){
+                system.onHit(bullet: bullet)
+            }else if bullet.grazeCount>0 && player.graze(bullet: bullet){
+                bullet.grazeCount-=1
+                system.onGraze(bullet: bullet)
             }
         }
         
         //update system
         system.onUpdate()
-        
-//        if layer[LAYER_BUL].children.count>=1000{
-//            print(layer[LAYER_BUL].children.count)
-//        }
     }
+    
+    override func update(_ currentTime: TimeInterval) {
+        update()
+        
+        #if os(macOS)
+        if key[S] ?? false{
+            update()
+            update()
+            update()
+        }
+        #endif
+    }
+    
+    #if os(iOS)
+    //touches detection. iOS only
+    var touchPosition = CGPoint.zero
+    override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        guard let touch = touches.first else{
+            return //Touch unavailable
+        }
+        
+        let loc=touch.location(in: self)
+        
+        touchPosition=loc
+        player.x+=Double(loc.x-touchPosition.x)
+        player.y+=Double(loc.y-touchPosition.y)
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        
+        guard let touch = touches.first else{
+            return //Touch unavailable
+        }
+        
+        touchPosition = touch.location(in: self)
+    }
+    #else
+    
+    var touchPosition = CGPoint.zero
+    
+    override func mouseDragged(with event: NSEvent) {
+        let loc=event.location(in: self)
+        
+        if player.deathbombWindow==0{
+            player.x+=Double(loc.x-touchPosition.x)
+            player.y+=Double(loc.y-touchPosition.y)
+        }
+//        player.x=Double(loc.x)
+//        player.y=Double(loc.y)
+        
+        touchPosition=loc
+    }
+    
+    override func mouseDown(with event: NSEvent) {
+        let loc=event.location(in: self)
+        
+//        player.x=Double(loc.x)
+//        player.y=Double(loc.y)
+        
+        touchPosition=loc
+    }
+
+    //key check
+    var key:[Int:Bool]=[:]
+    
+    let SHIFT = -1
+    let UP = 126
+    let LEFT = 123
+    let RIGHT = 124
+    let DOWN = 125
+    let Z = 6
+    let X = 7
+    let C = 8
+    let ESC = 53
+    let R = 15
+    let S = 1
+    
+    override func keyUp(with event: NSEvent) {
+        key[Int(event.keyCode)]=false
+    }
+    
+    override func keyDown(with event: NSEvent) {
+        key[Int(event.keyCode)]=true
+        
+        if event.keyCode==X{
+            system.onBomb()
+        }
+    }
+    
+    
+    func updateKey(){
+        let speed = key[Z] ?? false ? player.moveSpeed/2 : player.moveSpeed
+        
+        if player.deathbombWindow == 0{
+            if key[UP] ?? false{
+                player.y+=speed
+            }
+            if key[DOWN] ?? false{
+                player.y-=speed
+            }
+            if key[LEFT] ?? false{
+                player.x-=speed
+            }
+            if key[RIGHT] ?? false{
+                player.x+=speed
+            }
+        }
+        
+    }
+    #endif
+    
 }

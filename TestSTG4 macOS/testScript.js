@@ -23,8 +23,8 @@ function* gen(delta){
         for(var i=0;i<18;i++){
             v+=delta
             yield;
-            for(var j=1;j<=10;j++){
-                var id=createShot(j,getW()/2,getH()/2,j/3,v)
+            for(var j=1;j<=3;j++){
+                var id=createShot(j,getW()/2,getH()/2,j,v)
                 runTask(bullet(id))
             }
         }

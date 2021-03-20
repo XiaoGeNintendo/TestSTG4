@@ -12,7 +12,7 @@ struct MacView: View {
     
     var game: SKScene {
         let scene = STGScene()
-        scene.initSTGScene(painter: TSBackground(), script: ["test2","testScript"], system: TSSystem())
+        scene.initSTGScene(painter: TSBackground(), script: ["test2","testScript"], system: TSSystem(), player: TSPlayer())
         scene.size = CGSize(width: WIDTH, height: HEIGHT)
         scene.scaleMode = .fill
         return scene

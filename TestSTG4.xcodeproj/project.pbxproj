@@ -533,6 +533,8 @@
 		E32528982605A4200034263F /* global.js in Resources */ = {isa = PBXBuildFile; fileRef = E32528962605A4200034263F /* global.js */; };
 		E325289C2605AAFE0034263F /* ScriptTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E325289B2605AAFE0034263F /* ScriptTool.swift */; };
 		E325289D2605AAFE0034263F /* ScriptTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E325289B2605AAFE0034263F /* ScriptTool.swift */; };
+		E32528A82605BDE20034263F /* TSPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32528A72605BDE20034263F /* TSPlayer.swift */; };
+		E32528A92605BDE20034263F /* TSPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32528A72605BDE20034263F /* TSPlayer.swift */; };
 		E337C43D25FE474000E91C3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E337C43C25FE474000E91C3F /* AppDelegate.swift */; };
 		E337C43F25FE474000E91C3F /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E337C43E25FE474000E91C3F /* GameViewController.swift */; };
 		E337C44225FE474000E91C3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E337C44025FE474000E91C3F /* Main.storyboard */; };
@@ -833,6 +835,7 @@
 		E32528912605A3170034263F /* SceneScript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneScript.swift; sourceTree = "<group>"; };
 		E32528962605A4200034263F /* global.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = global.js; sourceTree = "<group>"; };
 		E325289B2605AAFE0034263F /* ScriptTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptTool.swift; sourceTree = "<group>"; };
+		E32528A72605BDE20034263F /* TSPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSPlayer.swift; sourceTree = "<group>"; };
 		E337C43425FE474000E91C3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E337C43925FE474000E91C3F /* TestSTG4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestSTG4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E337C43C25FE474000E91C3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -1224,6 +1227,7 @@
 				E39F213126024B620090BFBA /* TSObject.swift */,
 				E39F213526024C990090BFBA /* TSBullet.swift */,
 				E3A210842604F18E0099EBB6 /* TSBullet2.swift */,
+				E32528A72605BDE20034263F /* TSPlayer.swift */,
 			);
 			path = Engine;
 			sourceTree = "<group>";
@@ -1878,6 +1882,7 @@
 				E3662EFA2603916C003442EB /* TSBackground.swift in Sources */,
 				E3CA66F126038E97005CA40F /* CommonScript.swift in Sources */,
 				E32528922605A3170034263F /* SceneScript.swift in Sources */,
+				E32528A82605BDE20034263F /* TSPlayer.swift in Sources */,
 				E3662EF92603916C003442EB /* TSBullet.swift in Sources */,
 				E3662EF82603916C003442EB /* TSObject.swift in Sources */,
 			);
@@ -1900,6 +1905,7 @@
 				E3662EF126039163003442EB /* CommonScript.swift in Sources */,
 				E39F212C260248010090BFBA /* TSSystem.swift in Sources */,
 				E32528932605A3170034263F /* SceneScript.swift in Sources */,
+				E32528A92605BDE20034263F /* TSPlayer.swift in Sources */,
 				E39F2114260245920090BFBA /* MacView.swift in Sources */,
 				E39F2118260246140090BFBA /* Constants.swift in Sources */,
 			);
