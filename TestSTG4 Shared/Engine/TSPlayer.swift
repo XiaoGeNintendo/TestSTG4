@@ -9,7 +9,7 @@ import Foundation
 import SpriteKit
 
 class TSPlayer:TSObject{
-    var grazeRange: Double = 20
+    var grazeRange: Double = 50
     var hitbox: Double = 1
     
     var hitshow=SKSpriteNode()

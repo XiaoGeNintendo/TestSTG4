@@ -112,10 +112,6 @@ class STGScene: SKScene{
         print("Return as: \(ret!)")
         print("JavascriptCore loaded successfully")
         
-        //Init system
-        self.system=system
-        self.system.onInit(scene: self)
-        
         //Init bullet
         bullets=Array(repeating: nil, count: BULLETMAX)
         for i in 0..<BULLETMAX{
@@ -127,6 +123,11 @@ class STGScene: SKScene{
         self.player.x=Double(WIDTH)/2
         self.player.y=Double(HEIGHT)/4
         layer[LAYER_PL].addChild(self.player)
+        
+        //Init system
+        self.system=system
+        self.system.onInit(scene: self)
+        
     }
 
     override func didMove(to view: SKView) {
@@ -178,9 +179,9 @@ class STGScene: SKScene{
         //collision detect
         for i in layer[LAYER_BUL].children{
             let bullet=i as! TSBullet
-            if bullet.alive && player.collide(bullet: bullet){
+            if bullet.alive && player.invFrame==0 && player.deathbombWindow==0 && player.collide(bullet: bullet){
                 system.onHit(bullet: bullet)
-            }else if bullet.grazeCount>0 && player.graze(bullet: bullet){
+            }else if bullet.grazeCount>0 && player.deathbombWindow==0 && player.graze(bullet: bullet){
                 bullet.grazeCount-=1
                 system.onGraze(bullet: bullet)
             }
@@ -213,8 +214,10 @@ class STGScene: SKScene{
         let loc=touch.location(in: self)
         
         touchPosition=loc
-        player.x+=Double(loc.x-touchPosition.x)
-        player.y+=Double(loc.y-touchPosition.y)
+        if player.deathbombWindow==0{
+            player.x+=Double(loc.x-touchPosition.x)
+            player.y+=Double(loc.y-touchPosition.y)
+        }
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {

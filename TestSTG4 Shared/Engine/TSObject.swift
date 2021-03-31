@@ -17,6 +17,10 @@ class TSObject: SKNode{
     var vx:Double=0,vy:Double=0
     var ax:Double=0,ay:Double=0
     
+    func setPos(x: Double, y: Double){
+        self.x=x
+        self.y=y
+    }
     /**
      Be called each frame to update the properities of the object
      */

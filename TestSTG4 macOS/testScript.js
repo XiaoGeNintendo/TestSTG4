@@ -8,13 +8,13 @@ function* bullet(id){
         yield;
     }
 
-    setOmega(id,2)
+    setOmega(id,0.5)
 
-    for(var i=0;i<80;i++){
-        yield;
-    }
+    // for(var i=0;i<300;i++){
+    //     yield;
+    // }
 
-    deleteBullet(id);
+    // deleteBullet(id);
 }
 
 function* gen(delta){
@@ -24,7 +24,7 @@ function* gen(delta){
             v+=delta
             yield;
             for(var j=1;j<=3;j++){
-                var id=createShot(j,getW()/2,getH()/2,j,v)
+                var id=createShot(j,getW()/2,getH()/2,j/2,v)
                 runTask(bullet(id))
             }
         }

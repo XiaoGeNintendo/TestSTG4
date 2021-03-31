@@ -535,6 +535,18 @@
 		E325289D2605AAFE0034263F /* ScriptTool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E325289B2605AAFE0034263F /* ScriptTool.swift */; };
 		E32528A82605BDE20034263F /* TSPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32528A72605BDE20034263F /* TSPlayer.swift */; };
 		E32528A92605BDE20034263F /* TSPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32528A72605BDE20034263F /* TSPlayer.swift */; };
+		E32570822614B23200A6EAF7 /* StartScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32570812614B23200A6EAF7 /* StartScene.swift */; };
+		E32570852614B23400A6EAF7 /* StartScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32570812614B23200A6EAF7 /* StartScene.swift */; };
+		E325708A2614B2EF00A6EAF7 /* SEButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32570892614B2EF00A6EAF7 /* SEButton.swift */; };
+		E325708D2614B2FE00A6EAF7 /* SEButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32570892614B2EF00A6EAF7 /* SEButton.swift */; };
+		E32570922614B73200A6EAF7 /* StageSelectScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32570912614B73200A6EAF7 /* StageSelectScene.swift */; };
+		E32570972614B89500A6EAF7 /* StageSelectScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32570912614B73200A6EAF7 /* StageSelectScene.swift */; };
+		E325709C2614BB9600A6EAF7 /* DemoSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E325709B2614BB9600A6EAF7 /* DemoSystem.swift */; };
+		E32570A12614BC6800A6EAF7 /* DemoSystem.swift in Sources */ = {isa = PBXBuildFile; fileRef = E325709B2614BB9600A6EAF7 /* DemoSystem.swift */; };
+		E32570A52614C02300A6EAF7 /* TSLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32570A42614C02300A6EAF7 /* TSLabel.swift */; };
+		E32570A82614C07400A6EAF7 /* TSLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32570A42614C02300A6EAF7 /* TSLabel.swift */; };
+		E32570AC2614C37700A6EAF7 /* BulletPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32570AB2614C37700A6EAF7 /* BulletPool.swift */; };
+		E32570AD2614C37700A6EAF7 /* BulletPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32570AB2614C37700A6EAF7 /* BulletPool.swift */; };
 		E337C43D25FE474000E91C3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E337C43C25FE474000E91C3F /* AppDelegate.swift */; };
 		E337C43F25FE474000E91C3F /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E337C43E25FE474000E91C3F /* GameViewController.swift */; };
 		E337C44225FE474000E91C3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E337C44025FE474000E91C3F /* Main.storyboard */; };
@@ -836,6 +848,12 @@
 		E32528962605A4200034263F /* global.js */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.javascript; path = global.js; sourceTree = "<group>"; };
 		E325289B2605AAFE0034263F /* ScriptTool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScriptTool.swift; sourceTree = "<group>"; };
 		E32528A72605BDE20034263F /* TSPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSPlayer.swift; sourceTree = "<group>"; };
+		E32570812614B23200A6EAF7 /* StartScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartScene.swift; sourceTree = "<group>"; };
+		E32570892614B2EF00A6EAF7 /* SEButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SEButton.swift; sourceTree = "<group>"; };
+		E32570912614B73200A6EAF7 /* StageSelectScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StageSelectScene.swift; sourceTree = "<group>"; };
+		E325709B2614BB9600A6EAF7 /* DemoSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoSystem.swift; sourceTree = "<group>"; };
+		E32570A42614C02300A6EAF7 /* TSLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSLabel.swift; sourceTree = "<group>"; };
+		E32570AB2614C37700A6EAF7 /* BulletPool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletPool.swift; sourceTree = "<group>"; };
 		E337C43425FE474000E91C3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E337C43925FE474000E91C3F /* TestSTG4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestSTG4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E337C43C25FE474000E91C3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -1150,6 +1168,41 @@
 			path = shot.atlas;
 			sourceTree = "<group>";
 		};
+		E325707F2614B20700A6EAF7 /* Demo */ = {
+			isa = PBXGroup;
+			children = (
+				E325709A2614BB6000A6EAF7 /* STG */,
+				E32570882614B2E400A6EAF7 /* Expansion */,
+				E32570802614B20D00A6EAF7 /* Scenes */,
+			);
+			path = Demo;
+			sourceTree = "<group>";
+		};
+		E32570802614B20D00A6EAF7 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				E32570812614B23200A6EAF7 /* StartScene.swift */,
+				E32570912614B73200A6EAF7 /* StageSelectScene.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		E32570882614B2E400A6EAF7 /* Expansion */ = {
+			isa = PBXGroup;
+			children = (
+				E32570892614B2EF00A6EAF7 /* SEButton.swift */,
+			);
+			path = Expansion;
+			sourceTree = "<group>";
+		};
+		E325709A2614BB6000A6EAF7 /* STG */ = {
+			isa = PBXGroup;
+			children = (
+				E325709B2614BB9600A6EAF7 /* DemoSystem.swift */,
+			);
+			path = STG;
+			sourceTree = "<group>";
+		};
 		E337C42B25FE473F00E91C3F = {
 			isa = PBXGroup;
 			children = (
@@ -1164,6 +1217,7 @@
 		E337C43025FE473F00E91C3F /* TestSTG4 Shared */ = {
 			isa = PBXGroup;
 			children = (
+				E325707F2614B20700A6EAF7 /* Demo */,
 				E325257E2605A17F0034263F /* shot.atlas */,
 				E3CA66FC26039069005CA40F /* Script */,
 				E39F2124260247620090BFBA /* Engine */,
@@ -1225,6 +1279,7 @@
 				E39F21252602476B0090BFBA /* TSBackground.swift */,
 				E39F212B260248010090BFBA /* TSSystem.swift */,
 				E39F213126024B620090BFBA /* TSObject.swift */,
+				E32570A42614C02300A6EAF7 /* TSLabel.swift */,
 				E39F213526024C990090BFBA /* TSBullet.swift */,
 				E3A210842604F18E0099EBB6 /* TSBullet2.swift */,
 				E32528A72605BDE20034263F /* TSPlayer.swift */,
@@ -1240,6 +1295,7 @@
 				E3A2107F2604F1200099EBB6 /* ShotScript.swift */,
 				E32528912605A3170034263F /* SceneScript.swift */,
 				E325289B2605AAFE0034263F /* ScriptTool.swift */,
+				E32570AB2614C37700A6EAF7 /* BulletPool.swift */,
 			);
 			path = Script;
 			sourceTree = "<group>";
@@ -1870,8 +1926,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E337C43F25FE474000E91C3F /* GameViewController.swift in Sources */,
+				E32570822614B23200A6EAF7 /* StartScene.swift in Sources */,
+				E32570922614B73200A6EAF7 /* StageSelectScene.swift in Sources */,
+				E32570AC2614C37700A6EAF7 /* BulletPool.swift in Sources */,
 				E3662EFD2603916E003442EB /* STGScene.swift in Sources */,
 				E3A210802604F1200099EBB6 /* ShotScript.swift in Sources */,
+				E325709C2614BB9600A6EAF7 /* DemoSystem.swift in Sources */,
 				E3CA66F726038F07005CA40F /* Registering.swift in Sources */,
 				E325289C2605AAFE0034263F /* ScriptTool.swift in Sources */,
 				E3662EF72603916C003442EB /* TSSystem.swift in Sources */,
@@ -1879,10 +1939,12 @@
 				E3662F0026039171003442EB /* Constants.swift in Sources */,
 				E3A210762604EA010099EBB6 /* ShotsheetConstant.swift in Sources */,
 				E3A210852604F18E0099EBB6 /* TSBullet2.swift in Sources */,
+				E32570A52614C02300A6EAF7 /* TSLabel.swift in Sources */,
 				E3662EFA2603916C003442EB /* TSBackground.swift in Sources */,
 				E3CA66F126038E97005CA40F /* CommonScript.swift in Sources */,
 				E32528922605A3170034263F /* SceneScript.swift in Sources */,
 				E32528A82605BDE20034263F /* TSPlayer.swift in Sources */,
+				E325708A2614B2EF00A6EAF7 /* SEButton.swift in Sources */,
 				E3662EF92603916C003442EB /* TSBullet.swift in Sources */,
 				E3662EF82603916C003442EB /* TSObject.swift in Sources */,
 			);
@@ -1893,8 +1955,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				E39F213626024C990090BFBA /* TSBullet.swift in Sources */,
+				E32570852614B23400A6EAF7 /* StartScene.swift in Sources */,
+				E32570972614B89500A6EAF7 /* StageSelectScene.swift in Sources */,
+				E32570AD2614C37700A6EAF7 /* BulletPool.swift in Sources */,
 				E3662EF426039167003442EB /* Registering.swift in Sources */,
 				E3A210812604F1200099EBB6 /* ShotScript.swift in Sources */,
+				E32570A12614BC6800A6EAF7 /* DemoSystem.swift in Sources */,
 				E39F2110260245640090BFBA /* MacApp.swift in Sources */,
 				E325289D2605AAFE0034263F /* ScriptTool.swift in Sources */,
 				E39F213226024B620090BFBA /* TSObject.swift in Sources */,
@@ -1902,10 +1968,12 @@
 				E39F21262602476B0090BFBA /* TSBackground.swift in Sources */,
 				E3A210772604EA010099EBB6 /* ShotsheetConstant.swift in Sources */,
 				E3A210862604F18E0099EBB6 /* TSBullet2.swift in Sources */,
+				E32570A82614C07400A6EAF7 /* TSLabel.swift in Sources */,
 				E3662EF126039163003442EB /* CommonScript.swift in Sources */,
 				E39F212C260248010090BFBA /* TSSystem.swift in Sources */,
 				E32528932605A3170034263F /* SceneScript.swift in Sources */,
 				E32528A92605BDE20034263F /* TSPlayer.swift in Sources */,
+				E325708D2614B2FE00A6EAF7 /* SEButton.swift in Sources */,
 				E39F2114260245920090BFBA /* MacView.swift in Sources */,
 				E39F2118260246140090BFBA /* Constants.swift in Sources */,
 			);

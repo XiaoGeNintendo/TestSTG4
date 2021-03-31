@@ -7,9 +7,11 @@
 
 import Foundation
 
+//let pool = Bullet2Pool()
 
 let CreateShot: @convention(block) (Int,Double,Double,Double,Double) -> Int = { type,x,y,v,a in
-    let bullet=TSBullet2(type: type)
+//    let bullet=pool.new(type: type)
+    let bullet = TSBullet2(type: type)
     bullet.v=v
     bullet.x=x
     bullet.y=y

@@ -39,6 +39,17 @@ class TSBullet: TSObject{
         addChild(display)
     }
     
+    func reset(type: Int){
+        self.type=type
+        display.texture=textureCache[type]
+        display.position=CGPoint(x: 0,y: 0)
+        display.size=CGSize(width: sheet[type][SS_SX],height: sheet[type][SS_SY])
+        display.alpha=0
+        display.setScale(5)
+        display.run(SKAction.scale(to: 1, duration: 0.1))
+        display.run(SKAction.fadeIn(withDuration: 0.1))
+    }
+    
     func isOOB() -> Bool{
         let VALUE:Double=100
         return x >= Double(WIDTH) + VALUE || x <= -VALUE || y >= Double(HEIGHT) + VALUE || y <= -VALUE
