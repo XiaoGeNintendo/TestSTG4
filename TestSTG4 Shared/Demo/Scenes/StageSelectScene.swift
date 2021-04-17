@@ -43,7 +43,7 @@ class StageSelectScene: SKScene{
         play.position=CGPoint(x: WIDTH/2, y: HEIGHT/5)
         play.f={
             let sc=STGScene()
-            sc.initSTGScene(painter: TSBackground(), script: [stages[self.now][1]], system: DemoSystem(), player: TSPlayer())
+            sc.initSTGScene(painter: DemoBG(), script: [stages[self.now][1]], system: DemoSystem(), player: TSPlayer())
             sc.size = CGSize(width: WIDTH, height: HEIGHT)
             sc.scaleMode = .aspectFill
             

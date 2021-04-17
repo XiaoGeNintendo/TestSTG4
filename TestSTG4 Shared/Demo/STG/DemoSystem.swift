@@ -89,25 +89,27 @@ class DemoSystem: TSSystem{
     
     override func onShoot() {
         if shotCD==0{
-            let shot=TSPlayerShot(type: 128, penetrate: 3, damage: 1)
-            shot.x=pl.x
-            shot.y=pl.y
-            shot.vy=20
-            shot.display.zRotation = .pi/2
-            scene?.addShot(bullet: shot)
+            for i in -1...1{
+                let shot=TSPlayerShot(type: 1, penetrate: 3, damage: 3)
+                shot.x=pl.x-5.0*Double(i)
+                shot.y=pl.y
+                shot.vy=20
+                shot.display.zRotation = .pi/2
+                scene?.addShot(bullet: shot)
+            }
             
-            let shot2=TSPlayerShot(type: 128, penetrate: 3, damage: 1)
-            shot2.x=pl.x-20
+            let shot2=TSPlayerShot(type: 2, penetrate: 1, damage: 1)
+            shot2.x=pl.x-50
             shot2.y=pl.y
             shot2.vy=20
-            shot2.vx=1
+            shot2.vx=10
             scene?.addShot(bullet: shot2)
             
-            let shot3=TSPlayerShot(type: 128, penetrate: 3, damage: 1)
-            shot3.x=pl.x+20
+            let shot3=TSPlayerShot(type: 2, penetrate: 1, damage: 1)
+            shot3.x=pl.x+50
             shot3.y=pl.y
             shot3.vy=20
-            shot3.vx = -1
+            shot3.vx = -10
             scene?.addShot(bullet: shot3)
             shotCD=5
         }
