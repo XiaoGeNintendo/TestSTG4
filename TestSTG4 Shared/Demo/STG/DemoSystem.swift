@@ -70,7 +70,9 @@ class DemoSystem: TSSystem{
             
             for i in scene?.layer[LAYER_BUL].children ?? []{
                 let x=i as! TSBullet
-                x.delete()
+                if x.alive{
+                    x.delete()
+                }
             }
         }
     }
@@ -83,7 +85,9 @@ class DemoSystem: TSSystem{
         scene?.player.invFrame = 300
         for i in scene?.layer[LAYER_BUL].children ?? []{
             let x=i as! TSBullet
-            x.delete()
+            if x.alive{
+                x.delete()
+            }
         }
     }
     

@@ -37,5 +37,6 @@ let SetRawAcc: @convention(block) (Int,Double,Double) -> Void = { id,x,y in
 }
 
 let isAlive: @convention(block) (Int) -> Bool = { id in
+//    print("\(id) \(boss?.objects[id]!)")
     return boss?.objects[id]?.alive ?? false
 }

@@ -13,5 +13,7 @@ func replaceMacro(_ str: String, _ uuid: String) -> String{
     nstr=nstr.replacingOccurrences(of: "@init", with: "function onInit_\(nid)(scene)")
     nstr=nstr.replacingOccurrences(of: "@id", with: "\(nid)")
     
+    //macro
+    
     return nstr
 }

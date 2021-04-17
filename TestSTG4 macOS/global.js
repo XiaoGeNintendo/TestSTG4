@@ -34,7 +34,8 @@ function poolUpdate(){
         //     print(master[i]+" "+isAlive(master[i]))
         // }
         if(master[i]!=-1 && !isAlive(master[i])){
-            task=null
+            // print("Terminated for "+master[i])
+            eventPool[i]=null
             empty.push(i)
             continue;
         }
@@ -42,8 +43,10 @@ function poolUpdate(){
         var ret=task.next()
 
         if(ret.done){
-            task=null
+            eventPool[i]=null
             empty.push(i)
         }
     }
+
+    print("Fini")
 }

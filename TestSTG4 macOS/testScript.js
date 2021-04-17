@@ -37,7 +37,7 @@ function* gen(delta){
 
 function* enemy(id){
     while(true){
-        for(var i=0;i<60;i++){
+        for(var i=0;i<Math.random()*60+10;i++){
             yield;
         }
         setRawSpeed(id,0,0)
