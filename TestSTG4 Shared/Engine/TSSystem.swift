@@ -45,4 +45,8 @@ class TSSystem{
     func onBomb(){
         
     }
+    
+    func onHit(enemy: TSEnemy){
+        
+    }
 }

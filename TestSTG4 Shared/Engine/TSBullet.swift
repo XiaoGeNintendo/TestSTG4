@@ -14,17 +14,22 @@ class TSBullet: TSObject{
     var display: SKSpriteNode
     
     var autoFree=true
-    var alive=true
+    var collideReady=false
     
     var grazeCount=1
     
     var hitbox:Double = 0
-    var id: Int = -1
     
-    init(type: Int){
+    convenience init(type: Int){
+        self.init(type: type, duration: 0.1)
+    }
+    
+    init(type: Int, duration: Double){
         self.type=type
         self.display=SKSpriteNode()
         super.init()
+        
+        position=CGPoint(x: -1000, y: -1000)
         
         hitbox=Double(min(sheet[type][SS_SX], sheet[type][SS_SY]))/3.0
         
@@ -34,8 +39,11 @@ class TSBullet: TSObject{
         display.size=CGSize(width: sheet[type][SS_SX],height: sheet[type][SS_SY])
         display.alpha=0
         display.setScale(5)
-        display.run(SKAction.scale(to: 1, duration: 0.1))
-        display.run(SKAction.fadeIn(withDuration: 0.1))
+        display.run(SKAction.scale(to: 1, duration: duration))
+        display.run(SKAction.fadeIn(withDuration: duration))
+        display.run(SKAction.sequence([SKAction.wait(forDuration: duration),SKAction.run {
+            self.collideReady=true
+        }]))
         addChild(display)
     }
     
@@ -50,15 +58,12 @@ class TSBullet: TSObject{
         display.run(SKAction.fadeIn(withDuration: 0.1))
     }
     
-    func isOOB() -> Bool{
-        let VALUE:Double=100
-        return x >= Double(WIDTH) + VALUE || x <= -VALUE || y >= Double(HEIGHT) + VALUE || y <= -VALUE
-    }
+    
     /**
      Delete a bullet ELEGANTLY
      */
     func delete(){
-        boss?.removeBullet(id: id)
+        boss?.removeObject(id: id)
         alive=false
         run(SKAction.sequence([
             SKAction.group([

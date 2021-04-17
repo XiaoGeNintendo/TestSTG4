@@ -547,6 +547,16 @@
 		E32570A82614C07400A6EAF7 /* TSLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32570A42614C02300A6EAF7 /* TSLabel.swift */; };
 		E32570AC2614C37700A6EAF7 /* BulletPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32570AB2614C37700A6EAF7 /* BulletPool.swift */; };
 		E32570AD2614C37700A6EAF7 /* BulletPool.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32570AB2614C37700A6EAF7 /* BulletPool.swift */; };
+		E32A0625262A874900E4BE65 /* ICollisionDetect.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32A0624262A874900E4BE65 /* ICollisionDetect.swift */; };
+		E32A0626262A874900E4BE65 /* ICollisionDetect.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32A0624262A874900E4BE65 /* ICollisionDetect.swift */; };
+		E32A062C262A8B9800E4BE65 /* TSEnemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32A062B262A8B9800E4BE65 /* TSEnemy.swift */; };
+		E32A062D262A8B9800E4BE65 /* TSEnemy.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32A062B262A8B9800E4BE65 /* TSEnemy.swift */; };
+		E32A0631262A8E6F00E4BE65 /* TSPlayerShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32A0630262A8E6F00E4BE65 /* TSPlayerShot.swift */; };
+		E32A0632262A8E6F00E4BE65 /* TSPlayerShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32A0630262A8E6F00E4BE65 /* TSPlayerShot.swift */; };
+		E32A0636262A936A00E4BE65 /* EnemyScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32A0635262A936A00E4BE65 /* EnemyScript.swift */; };
+		E32A0637262A936A00E4BE65 /* EnemyScript.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32A0635262A936A00E4BE65 /* EnemyScript.swift */; };
+		E32A063B262A9AAD00E4BE65 /* StopWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32A063A262A9AAD00E4BE65 /* StopWatch.swift */; };
+		E32A063C262A9AAD00E4BE65 /* StopWatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = E32A063A262A9AAD00E4BE65 /* StopWatch.swift */; };
 		E337C43D25FE474000E91C3F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E337C43C25FE474000E91C3F /* AppDelegate.swift */; };
 		E337C43F25FE474000E91C3F /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E337C43E25FE474000E91C3F /* GameViewController.swift */; };
 		E337C44225FE474000E91C3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E337C44025FE474000E91C3F /* Main.storyboard */; };
@@ -854,6 +864,11 @@
 		E325709B2614BB9600A6EAF7 /* DemoSystem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DemoSystem.swift; sourceTree = "<group>"; };
 		E32570A42614C02300A6EAF7 /* TSLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSLabel.swift; sourceTree = "<group>"; };
 		E32570AB2614C37700A6EAF7 /* BulletPool.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BulletPool.swift; sourceTree = "<group>"; };
+		E32A0624262A874900E4BE65 /* ICollisionDetect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ICollisionDetect.swift; sourceTree = "<group>"; };
+		E32A062B262A8B9800E4BE65 /* TSEnemy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSEnemy.swift; sourceTree = "<group>"; };
+		E32A0630262A8E6F00E4BE65 /* TSPlayerShot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TSPlayerShot.swift; sourceTree = "<group>"; };
+		E32A0635262A936A00E4BE65 /* EnemyScript.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnemyScript.swift; sourceTree = "<group>"; };
+		E32A063A262A9AAD00E4BE65 /* StopWatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopWatch.swift; sourceTree = "<group>"; };
 		E337C43425FE474000E91C3F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E337C43925FE474000E91C3F /* TestSTG4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TestSTG4.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E337C43C25FE474000E91C3F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -1283,6 +1298,10 @@
 				E39F213526024C990090BFBA /* TSBullet.swift */,
 				E3A210842604F18E0099EBB6 /* TSBullet2.swift */,
 				E32528A72605BDE20034263F /* TSPlayer.swift */,
+				E32A0624262A874900E4BE65 /* ICollisionDetect.swift */,
+				E32A062B262A8B9800E4BE65 /* TSEnemy.swift */,
+				E32A0630262A8E6F00E4BE65 /* TSPlayerShot.swift */,
+				E32A063A262A9AAD00E4BE65 /* StopWatch.swift */,
 			);
 			path = Engine;
 			sourceTree = "<group>";
@@ -1293,6 +1312,7 @@
 				E3CA66F026038E97005CA40F /* CommonScript.swift */,
 				E3CA66F626038F07005CA40F /* Registering.swift */,
 				E3A2107F2604F1200099EBB6 /* ShotScript.swift */,
+				E32A0635262A936A00E4BE65 /* EnemyScript.swift */,
 				E32528912605A3170034263F /* SceneScript.swift */,
 				E325289B2605AAFE0034263F /* ScriptTool.swift */,
 				E32570AB2614C37700A6EAF7 /* BulletPool.swift */,
@@ -1928,15 +1948,19 @@
 				E337C43F25FE474000E91C3F /* GameViewController.swift in Sources */,
 				E32570822614B23200A6EAF7 /* StartScene.swift in Sources */,
 				E32570922614B73200A6EAF7 /* StageSelectScene.swift in Sources */,
+				E32A0631262A8E6F00E4BE65 /* TSPlayerShot.swift in Sources */,
 				E32570AC2614C37700A6EAF7 /* BulletPool.swift in Sources */,
 				E3662EFD2603916E003442EB /* STGScene.swift in Sources */,
 				E3A210802604F1200099EBB6 /* ShotScript.swift in Sources */,
 				E325709C2614BB9600A6EAF7 /* DemoSystem.swift in Sources */,
 				E3CA66F726038F07005CA40F /* Registering.swift in Sources */,
+				E32A0625262A874900E4BE65 /* ICollisionDetect.swift in Sources */,
 				E325289C2605AAFE0034263F /* ScriptTool.swift in Sources */,
+				E32A0636262A936A00E4BE65 /* EnemyScript.swift in Sources */,
 				E3662EF72603916C003442EB /* TSSystem.swift in Sources */,
 				E337C43D25FE474000E91C3F /* AppDelegate.swift in Sources */,
 				E3662F0026039171003442EB /* Constants.swift in Sources */,
+				E32A062C262A8B9800E4BE65 /* TSEnemy.swift in Sources */,
 				E3A210762604EA010099EBB6 /* ShotsheetConstant.swift in Sources */,
 				E3A210852604F18E0099EBB6 /* TSBullet2.swift in Sources */,
 				E32570A52614C02300A6EAF7 /* TSLabel.swift in Sources */,
@@ -1945,6 +1969,7 @@
 				E32528922605A3170034263F /* SceneScript.swift in Sources */,
 				E32528A82605BDE20034263F /* TSPlayer.swift in Sources */,
 				E325708A2614B2EF00A6EAF7 /* SEButton.swift in Sources */,
+				E32A063B262A9AAD00E4BE65 /* StopWatch.swift in Sources */,
 				E3662EF92603916C003442EB /* TSBullet.swift in Sources */,
 				E3662EF82603916C003442EB /* TSObject.swift in Sources */,
 			);
@@ -1957,15 +1982,19 @@
 				E39F213626024C990090BFBA /* TSBullet.swift in Sources */,
 				E32570852614B23400A6EAF7 /* StartScene.swift in Sources */,
 				E32570972614B89500A6EAF7 /* StageSelectScene.swift in Sources */,
+				E32A0632262A8E6F00E4BE65 /* TSPlayerShot.swift in Sources */,
 				E32570AD2614C37700A6EAF7 /* BulletPool.swift in Sources */,
 				E3662EF426039167003442EB /* Registering.swift in Sources */,
 				E3A210812604F1200099EBB6 /* ShotScript.swift in Sources */,
 				E32570A12614BC6800A6EAF7 /* DemoSystem.swift in Sources */,
 				E39F2110260245640090BFBA /* MacApp.swift in Sources */,
+				E32A0626262A874900E4BE65 /* ICollisionDetect.swift in Sources */,
 				E325289D2605AAFE0034263F /* ScriptTool.swift in Sources */,
+				E32A0637262A936A00E4BE65 /* EnemyScript.swift in Sources */,
 				E39F213226024B620090BFBA /* TSObject.swift in Sources */,
 				E39F211F260246B80090BFBA /* STGScene.swift in Sources */,
 				E39F21262602476B0090BFBA /* TSBackground.swift in Sources */,
+				E32A062D262A8B9800E4BE65 /* TSEnemy.swift in Sources */,
 				E3A210772604EA010099EBB6 /* ShotsheetConstant.swift in Sources */,
 				E3A210862604F18E0099EBB6 /* TSBullet2.swift in Sources */,
 				E32570A82614C07400A6EAF7 /* TSLabel.swift in Sources */,
@@ -1974,6 +2003,7 @@
 				E32528932605A3170034263F /* SceneScript.swift in Sources */,
 				E32528A92605BDE20034263F /* TSPlayer.swift in Sources */,
 				E325708D2614B2FE00A6EAF7 /* SEButton.swift in Sources */,
+				E32A063C262A9AAD00E4BE65 /* StopWatch.swift in Sources */,
 				E39F2114260245920090BFBA /* MacView.swift in Sources */,
 				E39F2118260246140090BFBA /* Constants.swift in Sources */,
 			);

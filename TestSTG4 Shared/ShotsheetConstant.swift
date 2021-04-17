@@ -36,6 +36,7 @@ func cacheTexture(){
     }
     print("Caching Texture...")
     for i in shotName{
+        print(i+" = \(textureCache.count)")
         let sub=SKTexture(imageNamed: i)
         textureCache.append(sub)
     }

@@ -8,7 +8,11 @@
 import Foundation
 import SpriteKit
 
-class TSPlayer:TSObject{
+class TSPlayer:TSObject, IPlayerCollisionDetect, IPlayerGrazeCollisionDetect{
+    
+    
+    
+    
     var grazeRange: Double = 50
     var hitbox: Double = 1
     
@@ -29,14 +33,31 @@ class TSPlayer:TSObject{
         addChild(hitshow)
     }
     
-    func collide(bullet: TSBullet) -> Bool{
-        let dis=pow(bullet.x-x,2)+pow(bullet.y-y,2)
-        return dis<pow(hitbox,2)+pow(bullet.hitbox, 2)
+    func onHit(bullet: TSBullet,scene: STGScene) {
+        scene.system.onHit(bullet: bullet)
+    }
+
+    func onGraze(bullet: TSBullet,scene: STGScene) {
+        scene.system.onGraze(bullet: bullet)
     }
     
-    func graze(bullet: TSBullet) -> Bool{
+    func collide(bullet: TSBullet,scene: STGScene) -> Bool{
         let dis=pow(bullet.x-x,2)+pow(bullet.y-y,2)
-        return dis<pow(grazeRange,2)+pow(bullet.hitbox, 2)
+        return deathbombWindow==0 && invFrame==0 && dis<pow(hitbox,2)+pow(bullet.hitbox, 2)
+    }
+    
+    func onHit(enemy: TSEnemy, scene: STGScene) {
+        scene.system.onHit(enemy: enemy)
+    }
+    
+    func collide(enemy: TSEnemy, scene: STGScene) -> Bool {
+        let dis=pow(enemy.x-x,2)+pow(enemy.y-y,2)
+        return deathbombWindow==0 && invFrame==0 && dis<pow(hitbox,2)+pow(enemy.hitboxP, 2)
+    }
+    
+    func graze(bullet: TSBullet, scene: STGScene) -> Bool{
+        let dis=pow(bullet.x-x,2)+pow(bullet.y-y,2)
+        return dis<pow(grazeRange,2)+pow(bullet.hitbox, 2) && deathbombWindow==0
     }
     
     override func update() {

@@ -14,8 +14,12 @@ class TSBullet2: TSBullet{
     var acc:Double=0
     var omega:Double=0
     
-    override init(type: Int){
-        super.init(type: type)
+    override init(type: Int, duration: Double) {
+        super.init(type: type,duration: duration)
+    }
+    
+    convenience init(type: Int) {
+        self.init(type: type,duration: 0.1)
     }
     
     override func update() {

@@ -18,7 +18,7 @@ class STGScene: SKScene{
     var system: TSSystem = TSSystem()
     
     var layer:[SKNode]=[SKNode(),SKNode(),SKNode(),SKNode(),SKNode(),SKNode()]
-    var bullets:[TSBullet?]=[]
+    var objects:[TSObject?]=[]
     var disposed:[Int]=[]
     
     var jsc=JSContext()
@@ -51,26 +51,40 @@ class STGScene: SKScene{
         }
     }
     
+    func addObj(obj: TSObject, to: Int){
+        if disposed.isEmpty{
+            print("Too many objects!! Will not add a new one")
+            return
+        }
+        
+        obj.id=disposed.first!
+        objects[disposed.first!]=obj
+        layer[to].addChild(obj)
+        disposed.removeFirst()
+    }
+    
     /**
      Add a bullet to the bullet pool
      */
     func addBullet(bullet: TSBullet){
-        if disposed.isEmpty{
-            print("Too many bullets!! Will not add a new one")
-            return
-        }
-        
-        bullet.id=disposed.first!
-        bullets[disposed.first!]=bullet
-        layer[LAYER_BUL].addChild(bullet)
-        disposed.removeFirst()
+        addObj(obj: bullet, to: LAYER_BUL)
     }
     
+    /**
+     Add a playershot to the bullet pool
+     */
+    func addShot(bullet: TSPlayerShot){
+        addObj(obj: bullet, to: LAYER_PL)
+    }
+    
+    /**
+     Force return a bullet. If not a bullet, will crash happily :)
+     */
     func getBullet(id: Int) -> TSBullet{
-        return bullets[id]!
+        return objects[id] as! TSBullet
     }
     
-    func removeBullet(id: Int){
+    func removeObject(id: Int){
         disposed.append(id)
     }
     
@@ -113,7 +127,7 @@ class STGScene: SKScene{
         print("JavascriptCore loaded successfully")
         
         //Init bullet
-        bullets=Array(repeating: nil, count: BULLETMAX)
+        objects=Array(repeating: nil, count: BULLETMAX)
         for i in 0..<BULLETMAX{
             disposed.append(i)
         }
@@ -148,18 +162,27 @@ class STGScene: SKScene{
     
     func update(){
         
+        let watch=StopWatch(no: true)
+        let w2=StopWatch(no: true)
+        
         //update ui components
         bgp.onUpdate()
+        
+        watch.tap("UI Update")
         
         //update objects
         for i in 0..<LAYERCNT{
             updateLayer(layer[i])
         }
         
+        watch.tap("Layer update")
+        
         //update keys
         #if os(macOS)
         updateKey()
         #endif
+        
+        watch.tap("Key update")
         
         //run script
         let fun=jsc?.objectForKeyedSubscript("poolUpdate")
@@ -168,6 +191,7 @@ class STGScene: SKScene{
         let fun2=jsc?.objectForKeyedSubscript("update_\(stack.last!)")
         fun2?.call(withArguments: nil)
         
+        watch.tap("Script Handling")
         //garbage collect
         for i in layer[LAYER_BUL].children{
             let bullet=i as! TSBullet
@@ -176,19 +200,78 @@ class STGScene: SKScene{
             }
         }
         
-        //collision detect
-        for i in layer[LAYER_BUL].children{
-            let bullet=i as! TSBullet
-            if bullet.alive && player.invFrame==0 && player.deathbombWindow==0 && player.collide(bullet: bullet){
-                system.onHit(bullet: bullet)
-            }else if bullet.grazeCount>0 && player.deathbombWindow==0 && player.graze(bullet: bullet){
-                bullet.grazeCount-=1
-                system.onGraze(bullet: bullet)
+        for i in layer[LAYER_ENE].children{
+            let enemy=i as! TSEnemy
+            if enemy.alive{
+                if enemy.hp<=0.5 || enemy.isOOB() && enemy.autoFree{
+                    enemy.delete()
+                }
             }
         }
         
+        for i in layer[LAYER_PL].children{
+            if let bullet=i as? TSPlayerShot{
+                if bullet.alive && (bullet.isOOB() || bullet.penetrate==0){
+                    bullet.delete()
+                }
+            }
+        }
+        
+        watch.tap("Garbage Collect")
+        //collision detect - bullet
+        for i in 0..<LAYERCNT{
+            if i == LAYER_BUL{
+                continue
+            }
+            for j in layer[i].children{
+                if let collider = j as? IPlayerCollisionDetect{
+                    for k in layer[LAYER_BUL].children{
+                        let bullet=k as! TSBullet
+                        if bullet.alive && collider.collide(bullet: bullet, scene: self){
+                            collider.onHit(bullet: bullet, scene: self)
+                        }
+                    }
+                }
+                if let collider = j as? IPlayerGrazeCollisionDetect{
+                    for k in layer[LAYER_BUL].children{
+                        let bullet=k as! TSBullet
+                        if bullet.alive && bullet.grazeCount>0 && collider.graze(bullet: bullet, scene: self){
+                            bullet.grazeCount-=1
+                            collider.onGraze(bullet: bullet, scene: self)
+                        }
+                    }
+                }
+            }
+        }
+        
+        //collision detect - enemy
+        for i in 0..<LAYERCNT{
+            if i==LAYER_BUL {
+                continue
+            }
+            for j in layer[i].children{
+                if let collider = j as? IPlayerShotCollisionDetect{
+                    for k in layer[LAYER_ENE].children{
+                        let enemy=k as! TSEnemy
+                        if enemy.hp>0 && enemy.alive && collider.hit(enemy: enemy, scene: self){
+                            collider.onHit(enemy: enemy, scene: self)
+                        }
+                    }
+                }
+            }
+        }
+        
+        watch.tap("Collision")
         //update system
         system.onUpdate()
+        
+        //always shot
+        if player.deathbombWindow==0{
+            system.onShoot()
+        }
+        watch.tap("System")
+        
+        w2.tap("==========================")
     }
     
     override func update(_ currentTime: TimeInterval) {

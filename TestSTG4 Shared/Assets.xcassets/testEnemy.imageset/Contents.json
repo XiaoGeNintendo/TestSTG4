@@ -1,0 +1,23 @@
+{
+  "images" : [
+    {
+      "filename" : "38px-豪德寺三花（虹龙洞立绘）.png",
+      "idiom" : "universal",
+      "scale" : "1x"
+    },
+    {
+      "filename" : "38px-豪德寺三花（虹龙洞立绘）-1.png",
+      "idiom" : "universal",
+      "scale" : "2x"
+    },
+    {
+      "filename" : "38px-豪德寺三花（虹龙洞立绘）-2.png",
+      "idiom" : "universal",
+      "scale" : "3x"
+    }
+  ],
+  "info" : {
+    "author" : "xcode",
+    "version" : 1
+  }
+}

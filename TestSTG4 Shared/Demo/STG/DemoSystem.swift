@@ -20,7 +20,7 @@ class DemoSystem: TSSystem{
     
     var scoreLabel = TSLabel(text: "Score 0")
     var grazeLabel = TSLabel(text: "Graze 0")
-    var bulletLabel = TSLabel(text: "Bullet 0")
+    var bulletLabel = TSLabel(text: "Object 0")
     func setup(_ scoreLabel: TSLabel,_ down: Double){
         scoreLabel.lbl.horizontalAlignmentMode = .left
         scoreLabel.lbl.verticalAlignmentMode = .top
@@ -38,10 +38,12 @@ class DemoSystem: TSSystem{
         setup(bulletLabel, 40)
     }
     
+    var shotCD = 0
     override func onUpdate() {
         scoreLabel.lbl.text="SCORE \(score)"
         grazeLabel.lbl.text="GRAZE \(graze)"
-        bulletLabel.lbl.text="BULLET \(scene?.layer[LAYER_BUL].children.count ?? 0)"
+        bulletLabel.lbl.text="OBJECT \(BULLETMAX-(scene?.disposed.count ?? 0))"
+        shotCD=max(shotCD-1,0)
     }
     
     override func onGraze(bullet: TSBullet) {
@@ -79,5 +81,35 @@ class DemoSystem: TSSystem{
         scene?.player.x=Double(WIDTH/2)
         scene?.player.y=Double(HEIGHT/5)
         scene?.player.invFrame = 300
+        for i in scene?.layer[LAYER_BUL].children ?? []{
+            let x=i as! TSBullet
+            x.delete()
+        }
+    }
+    
+    override func onShoot() {
+        if shotCD==0{
+            let shot=TSPlayerShot(type: 128, penetrate: 3, damage: 1)
+            shot.x=pl.x
+            shot.y=pl.y
+            shot.vy=20
+            shot.display.zRotation = .pi/2
+            scene?.addShot(bullet: shot)
+            
+            let shot2=TSPlayerShot(type: 128, penetrate: 3, damage: 1)
+            shot2.x=pl.x-20
+            shot2.y=pl.y
+            shot2.vy=20
+            shot2.vx=1
+            scene?.addShot(bullet: shot2)
+            
+            let shot3=TSPlayerShot(type: 128, penetrate: 3, damage: 1)
+            shot3.x=pl.x+20
+            shot3.y=pl.y
+            shot3.vy=20
+            shot3.vx = -1
+            scene?.addShot(bullet: shot3)
+            shotCD=5
+        }
     }
 }
