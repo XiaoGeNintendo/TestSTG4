@@ -5,7 +5,7 @@ The engine is a sequel to [Test STG 2 in Java](https://github.com/XiaoGeNintendo
 
 # Termination
 This project is (probably) terminated due to the following reasons:
-- Overestimate of Spritekit's performance
+- Overestimation of Spritekit's performance
 - Loss of interest due to the coding complexity and difficulty
 - Repulsive system design which blocks the future development
 
