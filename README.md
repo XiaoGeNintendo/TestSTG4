@@ -3,6 +3,14 @@ Test STG4 is an experimental bullet hell engine for iOS and macOS to create Touh
 
 The engine is a sequel to [Test STG 2 in Java](https://github.com/XiaoGeNintendo/-LibGdx-Test-STG2) and [Test STG 3 in Danmakufu](https://github.com/XiaoGeNintendo/xiaogenintendo/releases/tag/STG01A)
 
+# Termination
+This project is (probably) terminated due to the following reasons:
+- Overestimate of Spritekit's performance
+- Loss of interest due to the coding complexity and difficulty
+- Repulsive system design which blocks the future development
+
+I feel extremely sorry for the 0 people who are waiting excitedly for this project and the 0 financial supporters.
+
 # Building
 It's just a Xcode project. Built on Big Sur 11.2.1 and Xcode 12.2
 
